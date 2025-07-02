@@ -7,10 +7,17 @@ class Solution:
         n = len(number)
         mid = int(n/2)
 
-        for i in range(mid):
-            if number[i] != number[(n-i-1)]:
-                
-                return False
-        
-        return True
-        
+        n1 = number[0:mid]
+        if n % 2 == 0:
+            n2 = number[mid:n]
+        else: 
+            n2 = number[mid+1:n]
+        n2 = n2[::-1]
+        print(n1)
+        print(n2)
+
+        if n1 == n2:
+            return True
+
+        return False
+            
