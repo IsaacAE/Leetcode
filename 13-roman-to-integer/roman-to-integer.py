@@ -16,7 +16,6 @@ class Solution:
         for c in s:
             current_v = roman.get(c)
             prev_v = roman.get(prev)
-            
             if prev_v < current_v:
                 value -= 2*prev_v
             prev = c
