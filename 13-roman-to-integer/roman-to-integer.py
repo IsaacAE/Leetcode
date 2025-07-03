@@ -10,17 +10,19 @@ class Solution:
         "M":1000
         }
       
-        n = len(s)-1
+        prev = ''
         value = 0
-        for i in range(n):
-            actual = roman.get(s[i])
-            next = roman.get(s[i+1])
-            if actual < next:
-                value -= actual
-            else:
-                value +=actual
+        for c in s:
+            current_v = roman.get(c)
+            prev_v = roman.get(prev)
+            if prev_v is None:
+                prev_v = 0
+            if prev_v < current_v:
+                value -= 2*prev_v
+            prev = c
+            value += current_v
             
-        value += roman.get(s[n])
+        
         
         return value
 
