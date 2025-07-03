@@ -7,16 +7,16 @@ class Solution:
         "L":50,
         "C":100,
         "D":500,
-        "M":1000
+        "M":1000,
+        "Z":0
         }
       
-        prev = ''
+        prev = 'Z'
         value = 0
         for c in s:
             current_v = roman.get(c)
             prev_v = roman.get(prev)
-            if prev_v is None:
-                prev_v = 0
+            
             if prev_v < current_v:
                 value -= 2*prev_v
             prev = c
