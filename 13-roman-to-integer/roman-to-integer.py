@@ -1,6 +1,10 @@
 class Solution:
     def romanToInt(self, s: str) -> int:
-        roman = {}
+        roman = {
+        "I":1,
+        "V":5,
+        "X":10
+        }
         roman.update({"I":1})
         roman.update({"V":5})
         roman.update({"X":10})
