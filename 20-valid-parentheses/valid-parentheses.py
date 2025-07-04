@@ -1,20 +1,15 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        dict_paren= {"(":1, ")":-1, "[":2, "]":-2, "{":3, "}":-3}
+        dict_paren= {")":"(", "]":"[", "}":"{"}
         stack = []
 
         for paren in s:
-            current = dict_paren.get(paren)
-            if  current > 0:
-                stack.append(paren)
+            if dict_paren.get(paren) != None:
+                if not stack or stack.pop() != dict_paren.get(paren):
+                    return False
             else:
-               if not stack:
-                    return False
-               pair = dict_paren.get(stack.pop())
-
-               if pair + current != 0:
-                    return False
-
+                stack.append(paren)
+                
         if len(stack) > 0:
             return False
         
