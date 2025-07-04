@@ -11,8 +11,5 @@ class Solution:
             else:
                 stack.append(paren)
 
-        if len(stack) > 0:
-            return False
-        
-        return True
+        return not stack
                
