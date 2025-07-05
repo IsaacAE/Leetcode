@@ -19,11 +19,5 @@ class Solution:
                 diff +=1 
                 i+=1  
                 
-            
-
-            
-
-       
-
         return diff
         
