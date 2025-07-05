@@ -5,7 +5,7 @@ class Solution:
      
         unique = 1
         current = nums[0]
-        for i in range(unique, len(nums)):
+        for i in range(1, len(nums)):
 
             if current < nums[i]:
                 current = nums[i]
