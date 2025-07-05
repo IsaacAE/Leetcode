@@ -14,8 +14,8 @@ class Solution:
                 nums[unique]= current
                 unique += 1
 
-        for j in range(unique, n):
-            nums[j] = "_"
+       # for j in range(unique, n):
+        #    nums[j] = "_"
 
         return unique
         
