@@ -18,7 +18,7 @@ class Solution:
         if not j:
             return list1
 
-        head = ListNode(-100)
+        head = ListNode()
 
         if i.val <= j.val:
             head = ListNode(i.val)
