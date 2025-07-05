@@ -1,6 +1,5 @@
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
-        n = len(nums)
         i = 0
         diff = 0
 
