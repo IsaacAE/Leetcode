@@ -1,8 +1,6 @@
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
 
-        if not nums:
-            return 0
 
         n = len(nums)
         unique = 1
@@ -13,10 +11,6 @@ class Solution:
                 current = nums[i]
                 nums[unique]= current
                 unique += 1
-
-       # for j in range(unique, n):
-        #    nums[j] = "_"
-
         return unique
         
             
