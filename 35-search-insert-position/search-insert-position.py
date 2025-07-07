@@ -5,17 +5,20 @@ class Solution:
         mid = (start+end) // 2
         reach = True
 
-        while start < end-1:
+        while start < end:
             
             search = nums[mid]
             if search == target:
                 return mid
             
             if search < target:
-                start = mid
+                start = mid+1
             
-            if search > target:
-                end = mid
+            elif search > target:
+                end = mid-1
+
+            else:
+                end = mid-1
 
             mid = (start+end) // 2
 
