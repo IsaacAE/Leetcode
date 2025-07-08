@@ -1,7 +1,6 @@
 class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
         i = len(digits)-1
-        k = 1
         r = 0
         digits[i]+=1
         while i >= 0:
