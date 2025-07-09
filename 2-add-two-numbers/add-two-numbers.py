@@ -8,46 +8,38 @@ class Solution:
 
         i = l1
         j = l2
-        r = 0
         k = 0
-        node = ListNode()
-        p = node
+        node = ListNode((i.val+j.val) % 10 )
+        head = node
+        r = (i.val + j.val) // 10
     
-        while i != None and j != None:
-            k = i.val + j.val + r
-            r = 0
-            if k >= 10:
-                r = k // 10
-                k = k % 10
-
-            p.next = ListNode(k)   
+        while i.next != None and j.next != None:
             i = i.next
             j = j.next
-            p = p.next        
+            value = i.val + j.val +r
+            k = value % 10
+            r = value // 10
+            node.next = ListNode(k)   
+            node = node.next        
 
-        while j!= None:
-            k = 0 + j.val + r
-            r=0
-            if k >= 10:
-                r = k // 10
-                k = k % 10
-            p.next = ListNode(k)   
+        while j.next!= None:
             j = j.next
-            p = p.next   
+            value = j.val +r
+            k = value % 10
+            r = value // 10
+            node.next = ListNode(k)   
+            node = node.next 
 
-
-        while i!= None:
-            k = i.val + 0 + r
-            r=0
-            if k >= 10:
-                r = k // 10
-                k = k % 10
-            p.next = ListNode(k)   
+        while i.next!= None:
             i = i.next
-            p = p.next 
+            value = i.val +r
+            k = value % 10
+            r = value // 10
+            node.next = ListNode(k)   
+            node = node.next 
 
         if r != 0:
-            p.next = ListNode(r)
+            node.next = ListNode(r)
             
 
-        return node.next
+        return head
