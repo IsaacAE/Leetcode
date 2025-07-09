@@ -8,7 +8,6 @@ class Solution:
 
         i = l1
         j = l2
-        k = 0
         node = ListNode((i.val+j.val) % 10 )
         head = node
         r = (i.val + j.val) // 10
