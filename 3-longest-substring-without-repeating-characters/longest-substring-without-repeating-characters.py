@@ -1,25 +1,16 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         dic = {}
-        word = ""
         length = 0
-        i = 0
-        while i < len(s):
-            char = s[i:i+1]
-            r = dic.get(char)
-            if r != None:
-                dic = {}
-                i = r+1
-                
-                word= ""
-
+        start = 0
+        
+        for i in range(len(s)):
+            char = s[i]
+            if char in dic:
+                start = max(start, dic[char] + 1)
             
-            elif r == None:
-                dic.update({char:i})
-                word += char
-                if len(word) > length:
-                    length = len(word)
-                i+=1
+            length = max(length, i - start + 1)
+            dic[char] = i
         
         return length
 
