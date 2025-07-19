@@ -9,16 +9,14 @@ class Solution:
         
         while start <= end:
             search = int((start + end) / 2)
-            res = search * search
-            if res == x:
+            if (search**2) == x:
                 return search
-            elif res > x:
+            elif (search**2) > x:
                 end = search-1
             else:
                 start = search+1
                 
-
-        if res > x:
+        if (search**2) > x:
             return search-1
         else:
             return search
