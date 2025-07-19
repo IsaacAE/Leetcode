@@ -21,10 +21,10 @@ class Solution:
         head = ListNode()
 
         if i.val <= j.val:
-            head = ListNode(i.val)
+            head = i
             i = i.next
         else:
-            head = ListNode(j.val)
+            head = j
             j = j.next
 
         p = head
@@ -33,13 +33,13 @@ class Solution:
         while i is not None and j is not None:
             if i.val < j.val:
                 
-                p.next = ListNode(i.val)
+                p.next = i
                 p = p.next
                 i = i.next
                 
             
             else:
-                p.next = ListNode(j.val)
+                p.next = j
                 p = p.next
                 j = j.next
 
