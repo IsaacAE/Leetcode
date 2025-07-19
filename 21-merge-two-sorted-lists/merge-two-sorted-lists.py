@@ -12,12 +12,7 @@ class Solution:
         if not list2:
             return list1
 
-        if list1.val <= list2.val:
-            head = list1
-            list1 = list1.next
-        else:
-            head = list2
-            list2 = list2.next
+        head = ListNode()
 
         p = head
 
@@ -37,8 +32,6 @@ class Solution:
         else:
             p.next= list1
                
-       
-        
-        return head
+        return head.next
                 
             
