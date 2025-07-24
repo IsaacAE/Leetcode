@@ -1,5 +1,2 @@
-# Write your MySQL query statement below
-DELETE c1
-FROM Person c1
-JOIN Person c2
-ON c1.email = c2.email AND c1.id > c2.id;
+-- Write your PostgreSQL query statement below
+DELETE FROM Person where id not in (select min(id) from Person group by email having count(email) >= 1);
