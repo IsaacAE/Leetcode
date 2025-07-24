@@ -1,2 +1,2 @@
 -- Write your PostgreSQL query statement below
-select e.name as Customers from Customers e where not exists (select a.customerId from Orders a where a.customerId = e.id);
+select name as Customers from Customers c where c.id not in (select customerId from Orders)
