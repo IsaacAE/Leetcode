@@ -1,5 +1,9 @@
--- Write your PostgreSQL query statement below
-SELECT Department.name as Department, Employee.name as Employee, Employee.salary as Salary FROM Department JOIN (SELECT 
-        *,
-        RANK() OVER (PARTITION BY departmentId ORDER BY salary DESC) as ranking
-    FROM Employee) as Employee ON Department.id= Employee.departmentId WHERE ranking = 1;
+select d.name as Department,e.name as Employee,e.salary as Salary
+from Employee e
+join Department d
+on d.id=e.departmentId
+WHERE (e.departmentId, e.salary) IN (
+    SELECT departmentId, MAX(salary)
+    FROM Employee
+    GROUP BY departmentId
+)
