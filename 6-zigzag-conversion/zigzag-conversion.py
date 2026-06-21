@@ -1,6 +1,5 @@
 class Solution:
     def convert(self, s: str, numRows: int) -> str:
-        # Optimización 1: Salida anticipada ampliada
         if numRows <= 1:
             return s
         
