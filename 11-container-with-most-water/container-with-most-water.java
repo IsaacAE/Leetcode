@@ -7,13 +7,10 @@ class Solution {
         while (i < j){
             if (height[i] <= height[j]){
                 i++;
-                
             }else{
                 j--;
-
             }
 
-            
             testvol = Math.min(height[i],height[j]) * (j-i);
             if ( testvol > vol){
             
