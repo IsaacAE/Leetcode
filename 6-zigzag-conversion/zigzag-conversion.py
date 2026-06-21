@@ -1,25 +1,21 @@
 class Solution:
     def convert(self, s: str, numRows: int) -> str:
+        # Optimización 1: Salida anticipada ampliada
         if numRows <= 1:
             return s
-        diagonal = False
+        
         subs = [""] * numRows
         k = 0
+        step = 1
+        
         for letter in s:
-            subs[k]+=letter
-            if diagonal:
-                k-=1
-            else:
-                k+=1
-
-            if k == numRows-1 and diagonal==False: 
-                diagonal = True
-            elif k == numRows-1 and diagonal == True:
-                diagonal = False
-            elif k == 0 and diagonal == True:
-                diagonal = False
-        
+            subs[k] += letter
+            
+            if k == 0:
+                step = 1
+            elif k == numRows - 1:
+                step = -1
+                
+            k += step
+            
         return "".join(subs)
-
-
-        
