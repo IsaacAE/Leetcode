@@ -5,26 +5,25 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        max_len =0
-        left =0
-        counts ={}
+        count = {}
+        left = 0
+        max_len = 0
 
         for right in range(len(nums)):
             curr = nums[right]
-            if curr in counts:
-                counts[curr] +=1
-            else:
-                counts[curr] = 1
             
-            while counts[curr] > k:
-                left_slide = nums[left]
-                counts[left_slide] -=1
-                left +=1
+            if curr in count:
+                count[curr] += 1
+            else:
+                count[curr] = 1
 
-            window_len = right - left +1
-            if window_len > max_len:
-                max_len = window_len
+            while count[curr] > k:
+                left_num = nums[left]
+                count[left_num] -= 1
+                left += 1
+
+            current_len = right - left + 1
+            if current_len > max_len:
+                max_len = current_len
+
         return max_len
-
-
-        
