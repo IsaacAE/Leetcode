@@ -5,7 +5,7 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        count = defaultdict(int)
+        count = {}
         left = 0
         max_len = 0
 
