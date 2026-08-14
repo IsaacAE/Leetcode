@@ -18,8 +18,8 @@ class Solution(object):
                 count[curr] = 1
 
             while count[curr] > 2:
-                left_num = s[left]
-                count[left_num] -= 1
+                left_char = s[left]
+                count[left_char] -= 1
                 left += 1
 
             current_len = right - left + 1
